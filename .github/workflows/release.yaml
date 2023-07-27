@@ -5,6 +5,7 @@ on:
       - release
 
 env:
+  FOLDER: "05-graphical_editor"
   RELEASE_NAME: $(cat $PWD/$FOLDER/CMakeLists.txt | grep -Po "(?<=project\().*(?=\))" )
 
 jobs:

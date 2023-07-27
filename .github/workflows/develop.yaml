@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - develop
+      -
+env:
+  FOLDER: "05-graphical_editor"
 
 jobs:
   build:
