@@ -5,7 +5,6 @@ on:
       - release
 
 env:
-  FOLDER: "01-build_test_deploy"
   RELEASE_NAME: $(cat $PWD/$FOLDER/CMakeLists.txt | grep -Po "(?<=project\().*(?=\))" )
 
 jobs:
