@@ -1,0 +1,8 @@
+/*!
+ * \file version.h.in
+ * \brief File for get applictaion version
+ * \author Alexey Erunovskiy
+ */
+#pragma once
+
+#cmakedefine PROJECT_VERSION_PATCH @PROJECT_VERSION_PATCH@

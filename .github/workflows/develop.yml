@@ -1,0 +1,30 @@
+name: 'develop'
+on:
+  push:
+    branches:
+      - develop
+env:
+  FOLDER: "06-matrix"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: install boost
+        run: sudo apt-get install libboost-all-dev
+      - name: mkdir
+        run: mkdir build
+      - name: cmake
+        run: cmake -Bbuild -DPATCH_VERSION=${{ github.run_number }} -DBUILD_TESTS=OFF ${{github.workspace}}/$FOLDER/
+      - name: cmake build
+        run: cmake --build build/
+      - run: cmake --build build/ --target package
+      - name: Run unit tests
+        run: cd ${{github.workspace}}/$FOLDER && $PWD/../scripts/run_unit_tests.sh
+      - name: install valgrind
+        run: sudo apt-get install valgrind -y
+      - name: run valgrind
+        run: cd ${{github.workspace}}/$FOLDER && $PWD/../scripts/check_valgrind.sh
