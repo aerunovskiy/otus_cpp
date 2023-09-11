@@ -1,4 +1,4 @@
-name: 'Doxygen'
+name: 'doxygen'
 on:
   push:
     branches:
@@ -12,16 +12,16 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Doxygen
+      - name: install doxygen
         run: sudo apt-get install doxygen -y
 
-      - name: Run Doxygen
+      - name: run doxygen
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
           doxyfile-path: ./Doxyfile
           working-directory: .
 
-      - name: Publish to Github Pages
+      - name: deploy to github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

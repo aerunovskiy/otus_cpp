@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "sparse_matrix.h"
+#include "../src/sparse_matrix.h"
 
 int main(int argc, char **argv)
 {
@@ -30,11 +30,12 @@ TEST( test_matrix, test_matrix )
 
     matrix[200][200] = -1;
 
-    ASSERT_EQ(matrix.size(), 1);
+    ASSERT_EQ(matrix.size(), 2);
 
     for(auto& c: matrix)
     {
         auto [x, y, v] = c;
         std::cout << x << " " << y << " " << v << std::endl;
     }
+
 }

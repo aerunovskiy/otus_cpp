@@ -1,3 +1,4 @@
+
 cmake_minimum_required( VERSION 3.10 FATAL_ERROR )
 
 project( test_sparse_matrix LANGUAGES CXX )
@@ -19,11 +20,12 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
-include(${CMAKE_CURRENT_LIST_DIR}/../src/src.cmake)
+find_package(OpenSSL REQUIRED)
 
 add_executable(${PROJECT_NAME}
-               ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp )
+        ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp )
 
 target_link_libraries(${PROJECT_NAME}
-                      GTest::gtest
-                      )
+        GTest::gtest
+        OpenSSL::SSL
+        )
