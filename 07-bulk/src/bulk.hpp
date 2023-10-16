@@ -1,3 +1,5 @@
+#include <ctime>
+#include <fstream>
 #include <iostream>
 #include <queue>
 #include <string>
@@ -12,6 +14,9 @@ class Bulk final
 
     void push_back(const std::string& cmd)
     {
+        if ( cmd.compare("{") == 0 || commands.empty())
+            timepoints.push(get_timestamp());
+
         if ( cmd.compare("{") == 0 )
         {
              if ( brackets_balance == 0 )
@@ -50,27 +55,45 @@ class Bulk final
         if (commands.empty())
             return;
 
-        std::cout << "bulk: ";
+        std::string out = "bulk: ";
 
         while ( !commands.empty() )
         {
 
-            std::cout << commands.front();
+            out += commands.front();
 
             commands.pop();
 
             if ( !commands.empty() )
-                std::cout << ", ";
+                out += ", ";
         }
 
-        std::cout << std::endl;
+        out += "\n";
+
+        std::cout << out;
+
+        std::ofstream log ("bulk_" + timepoints.front() + ".log");
+
+        timepoints.pop();
+
+        if (!log.is_open())
+            std::cerr << "Failed to open log file for writing" << std::endl;
+
+        log << out;
+
+        log.close();
     }
     
 
     private:
 
+    std::string get_timestamp() const 
+    {
+        return std::to_string(time(nullptr));
+    }
+
     std::queue<std::string> commands;
-    std::stack<std::string> timepoints;
+    std::queue<std::string> timepoints;
 
     size_t brackets_balance {0};
 
