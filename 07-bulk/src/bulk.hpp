@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -5,12 +6,33 @@
 #include <string>
 #include <stack>
 
+#include "observer.hpp"
 
 class Bulk final
 {
     public:
 
     explicit Bulk(size_t cmd_num) : commands_number(cmd_num) {}
+
+    void add_observer(Observer* observer)
+    {
+        observers.push_back(observer);
+    }
+
+    void remove_observer(Observer* observer)
+    {
+        observers.erase(std::remove_if(observers.begin(), observers.end(), 
+            [observer](Observer* o)
+            {
+                return observer == o;
+            }), observers.end());
+    }
+
+    void notify(const std::string& message)
+    {
+        for (auto observer : observers)
+             observer->update(message);
+    }
 
     void push_back(const std::string& cmd)
     {
@@ -70,18 +92,17 @@ class Bulk final
 
         out += "\n";
 
-        std::cout << out;
+        ConsoleLogObserver console(std::cout);
+        add_observer(&console);
 
-        std::ofstream log ("bulk_" + timepoints.front() + ".log");
+        FileLogObserver file("bulk_" + timepoints.front() + ".log");
+        add_observer(&file);
+
+        notify(out);
+
+        remove_observer(&file);
 
         timepoints.pop();
-
-        if (!log.is_open())
-            std::cerr << "Failed to open log file for writing" << std::endl;
-
-        log << out;
-
-        log.close();
     }
     
 
@@ -98,4 +119,6 @@ class Bulk final
     size_t brackets_balance {0};
 
     size_t commands_number;
+
+    std::vector<Observer*> observers;
 };
