@@ -1,0 +1,17 @@
+<map id="05&#45;graphical_editor/src/controller/controller.h" name="05&#45;graphical_editor/src/controller/controller.h">
+<area shape="rect" id="Node000001" title="Business logic." alt="" coords="196,5,363,46"/>
+<area shape="rect" id="Node000002" href="$model_8h.html" title="Storage logic." alt="" coords="212,94,278,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,47,259,81,254,78,269,45"/>
+<area shape="rect" id="Node000007" href="$window__interface_8h.html" title=" " alt="" coords="314,168,446,193"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="295,45,366,153,361,156,290,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,168,77,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,122,91,165,89,160,210,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,168,168,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,122,167,161,164,157,225,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="193,168,239,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="243,121,229,154,224,152,238,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="301,241,354,267"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="254,119,316,226,311,229,249,121"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="269,118,345,158,342,162,267,123"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="373,195,348,230,343,227,369,192"/>
+</map>

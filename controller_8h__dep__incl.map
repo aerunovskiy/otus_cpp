@@ -1,0 +1,7 @@
+<map id="05&#45;graphical_editor/src/controller/controller.h" name="05&#45;graphical_editor/src/controller/controller.h">
+<area shape="rect" id="Node000001" title="Business logic." alt="" coords="5,5,173,46"/>
+<area shape="rect" id="Node000002" href="$view_8h.html" title="User Interface." alt="" coords="24,94,154,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,62,92,94,86,94,86,62"/>
+<area shape="rect" id="Node000003" href="$05-graphical__editor_2main_8cpp.html" title="Entry app file." alt="" coords="24,183,154,223"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,150,92,182,86,182,86,150"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Bulk::print" name="Bulk::print">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,84,80"/>
+<area shape="rect" id="Node000002" href="$classBulk.html#a2c5a0504dc3dd4b6ba7ccc92d151f10b" title=" " alt="" coords="143,5,274,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,53,148,33,150,39,85,58"/>
+<area shape="rect" id="Node000003" href="$classBulk.html#a1b98892f5bcb33a4fe805218abf62bb3" title=" " alt="" coords="166,55,251,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,65,151,65,151,70,84,70"/>
+<area shape="rect" id="Node000004" href="$classBulk.html#a476da2b857dfef72a88f760e47ab4a64" title=" " alt="" coords="132,104,285,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,77,150,96,148,102,83,82"/>
+</map>

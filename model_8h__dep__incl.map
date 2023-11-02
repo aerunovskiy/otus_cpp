@@ -1,0 +1,10 @@
+<map id="05&#45;graphical_editor/src/model/model.h" name="05&#45;graphical_editor/src/model/model.h">
+<area shape="rect" id="Node000001" title="Storage logic." alt="" coords="83,5,215,46"/>
+<area shape="rect" id="Node000002" href="$controller_8h.html" title="Business logic." alt="" coords="5,94,173,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,60,105,95,100,92,125,57"/>
+<area shape="rect" id="Node000003" href="$view_8h.html" title="User Interface." alt="" coords="84,183,214,223"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="173,58,188,93,191,114,188,135,178,161,165,184,160,181,173,159,182,134,186,114,182,95,168,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,146,138,181,133,184,109,149"/>
+<area shape="rect" id="Node000004" href="$05-graphical__editor_2main_8cpp.html" title="Entry app file." alt="" coords="84,271,214,312"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="152,239,152,271,146,271,146,239"/>
+</map>
