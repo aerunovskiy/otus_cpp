@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch tools")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(ip_filter VERSION ${PROJECT_VERSION})
+project(02_ip_filter VERSION ${PROJECT_VERSION})
 
 option(WITH_GTEST "Whether to build Google test" ON)
 

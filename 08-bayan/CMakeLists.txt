@@ -3,13 +3,20 @@ cmake_minimum_required( VERSION 3.10 FATAL_ERROR )
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(bayan VERSION ${PROJECT_VERSION})
+project(08_bayan VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-add_executable( ${PROJECT_NAME}
+find_package(Boost REQUIRED COMPONENTS
+        program_options
+        filesystem
+        regex
+        )
+
+add_executable(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/bayan.cpp
+        )
 
 set_target_properties( ${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 17
@@ -20,7 +27,12 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         )
 
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+target_link_libraries(${PROJECT_NAME} PUBLIC
+        Boost::program_options
+        Boost::filesystem
+        Boost::regex
+        )
+
 
 if (MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE
